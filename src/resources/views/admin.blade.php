@@ -86,6 +86,12 @@
                                 <label for="modal-toggle" class="admin-table__modal-close">×</label>
                                 {{-- 詳細内容 --}}
                                 <p>モーダルウィンドウの内容</p>
+                                {{-- @livewire('modal') --}}
+                                {{-- @livewire('modal') --}}
+                                <form action="/admin" method="post">
+                                    @csrf
+                                    {{ $contact->last_name }} {{ $contact->first_name }}
+                                </form>
                             </div>
                         </div>
                     </td>
