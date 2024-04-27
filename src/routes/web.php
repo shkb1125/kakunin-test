@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ModalController;
+use App\Http\Controllers\CsvDownloadController;
 
 // 問い合わせフォーム入力ページ
 Route::get('/', [ContactController::class, 'index']);
@@ -23,3 +24,6 @@ Route::post('/admin', [AdminController::class, 'search']);
 Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/modal', [ModalController::class, 'modal']);
+
+// エクスポート機能
+Route::post('/csv-download', [CsvDownloadController::class, 'csvExport']);

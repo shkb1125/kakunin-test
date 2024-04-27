@@ -46,6 +46,14 @@
         </form>
     </div>
 
+    {{-- エクスポート --}}
+    <div class="export">
+        <form id="export-form" action="/csv-download" method="post">
+            @csrf
+            <button class="search-form__button-submit" type="submit">エクスポート</button>
+        </form>
+    </div>
+
     {{-- ページネーション --}}
     <div class="pagination">
         <div class="page-item">
@@ -88,7 +96,7 @@
                                 <p>モーダルウィンドウの内容</p>
                                 {{-- @livewire('modal') --}}
                                 {{-- @livewire('modal') --}}
-                                <form action="/admin" method="post">
+                                <form action="/admin" method="get">
                                     @csrf
                                     {{ $contact->last_name }} {{ $contact->first_name }}
                                 </form>
